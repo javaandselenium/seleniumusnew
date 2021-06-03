@@ -7,9 +7,8 @@ public class Test1 {
 
 	public static void main(String[] args) {
 		WebDriver driver=new ChromeDriver();
-		
-		driver.get("https://skillrary.com/");
 		driver.manage().window().maximize();
+		driver.get("https://skillrary.com/");
 		System.out.println(driver.getTitle());
 		System.out.println(driver.getCurrentUrl());
 		
