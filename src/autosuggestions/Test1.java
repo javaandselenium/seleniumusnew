@@ -23,6 +23,7 @@ public class Test1 {
 		s.selectByValue("267");
 		s.selectByVisibleText("Clothing, Shoes & Accessories");
 		
+		s.deselectAll();
 		List<WebElement> opt= s.getOptions();
 		System.out.println(opt.size());
 		
