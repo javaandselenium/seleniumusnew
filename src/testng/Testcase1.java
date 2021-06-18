@@ -5,10 +5,14 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
+
 
 public class Testcase1 {
 	public WebDriver driver;
@@ -26,9 +30,15 @@ public class Testcase1 {
 		driver.findElement(By.id("pass")).sendKeys("fhgfgfgfghg");
 		driver.findElement(By.name("login")).click();
 		String t = driver.getTitle();
+		
+		Assert.assertEquals(t,"hg47fg67fry78h78");
+		SoftAssert s=new SoftAssert();
+		s.assertEquals(t,"fhgfyutrfgyyuu");
+		
 		Reporter.log(t,true);
 		String url = driver.getCurrentUrl();
 		Reporter.log(url,true);
+		s.assertAll();
 	}
 	
 	@AfterMethod
